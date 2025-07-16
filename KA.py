@@ -184,46 +184,7 @@ class KANLinear(torch.nn.Module):
                 regularize_activation * regularization_loss_activation
                 + regularize_entropy * regularization_loss_entropy
         )
-        
-class KAM(nn.Module):
-    """
-    KAN Adaptive Mixer.
-    """
-    def __init__(self, backbone: nn.Module, dim=768, num_classes=6, grid_size=3):
-        super().__init__()
-        self.backbone = backbone
 
-        self.meta_kan = KANLinear(
-            in_features=dim,
-            out_features=2,
-            grid_size=grid_size
-        )
-        self.kan_attention = KLAM(
-            dim=dim,
-            window_size=7,
-            groups=4
-        )
-        self.tau = nn.Parameter(torch.tensor(0.5))
-        self.classifier = nn.Sequential(
-            nn.LayerNorm(dim),
-            nn.Linear(dim, num_classes)
-        )
-
-    def forward(self, x):
-        base_feat = self.backbone(x)  # (B, H, W, C)
-        if base_feat.dim() == 4:
-            B, H, W, C = base_feat.shape
-            base_feat_seq = base_feat.view(B, H * W, C)  # (B, N, C)
-        elif base_feat.dim() == 3:
-            base_feat_seq = base_feat  # Already (B, N, C)
-        else:
-            raise ValueError("Backbone output must be 3D or 4D tensor")
-
-        alpha = torch.softmax(self.meta_kan(base_feat_seq.mean(1)), dim=-1)  # (B, 2)
-        attn_feat = self.kan_attention(base_feat_seq)  # (B, N, C)
-
-        final_feat = alpha[:, 0:1] * attn_feat.mean(1) + alpha[:, 1:2] * base_feat_seq.mean(1)
-        return self.classifier(final_feat)
 class KLAM(nn.Module):
     """
     Kolmogorov-Arnold Local Attention Module.
@@ -276,3 +237,43 @@ class KLAM(nn.Module):
         attn_matrix = torch.softmax(torch.cat(attn_scores, dim=1), dim=-1)  # (B, G, N, N)
         output = torch.bmm(attn_matrix.sum(dim=1), x)  # (B, N, D)
         return output
+        
+class KAM(nn.Module):
+    """
+    KAN Adaptive Mixer.
+    """
+    def __init__(self, backbone: nn.Module, dim=768, num_classes=6, grid_size=3):
+        super().__init__()
+        self.backbone = backbone
+
+        self.meta_kan = KANLinear(
+            in_features=dim,
+            out_features=2,
+            grid_size=grid_size
+        )
+        self.kan_attention = KLAM(
+            dim=dim,
+            window_size=7,
+            groups=4
+        )
+        self.tau = nn.Parameter(torch.tensor(0.5))
+        self.classifier = nn.Sequential(
+            nn.LayerNorm(dim),
+            nn.Linear(dim, num_classes)
+        )
+
+    def forward(self, x):
+        base_feat = self.backbone(x)  # (B, H, W, C)
+        if base_feat.dim() == 4:
+            B, H, W, C = base_feat.shape
+            base_feat_seq = base_feat.view(B, H * W, C)  # (B, N, C)
+        elif base_feat.dim() == 3:
+            base_feat_seq = base_feat  # Already (B, N, C)
+        else:
+            raise ValueError("Backbone output must be 3D or 4D tensor")
+
+        alpha = torch.softmax(self.meta_kan(base_feat_seq.mean(1)), dim=-1)  # (B, 2)
+        attn_feat = self.kan_attention(base_feat_seq)  # (B, N, C)
+
+        final_feat = alpha[:, 0:1] * attn_feat.mean(1) + alpha[:, 1:2] * base_feat_seq.mean(1)
+        return self.classifier(final_feat)
