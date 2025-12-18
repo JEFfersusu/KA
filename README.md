@@ -64,7 +64,7 @@ In addition to the classification experiments reported in our paper, we further 
 
 ## Ablation Study
 
-### Table 3. Component Analysis on CVC Dataset (UNeXt Backbone)
+### Table 3. Component Analysis on CVC Dataset
 
 | KLAM | KAM | IoU (%) | F1 (%) | Params (M) | GFLOPs |
 |:---:|:---:|---:|---:|---:|---:|
