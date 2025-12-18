@@ -5,12 +5,12 @@
 
 | Task | Dataset | Image Count | Resolution |
 |---|---|---:|:---:|
-| Classification | CPN X-ray [b14] | 5,228 (3 classes) | 224×224 |
-| Classification | PAD-UFES-20 [b15] | 2,298 (7 classes) | 224×224 |
+| Classification | CPN X-ray| 5,228 (3 classes) | 224×224 |
+| Classification | PAD-UFES-20| 2,298 (7 classes) | 224×224 |
 | Classification | PneumoniaMNIST [b16] | 5,856 (2 classes) | 224×224 |
-| Segmentation | BUSI [b17] | 647 (breast tumors) | 256×256 |
-| Segmentation | GlaS [b18] | 165 (gland masks) | 512×512 |
-| Segmentation | CVC-ClinicDB [b19] | 612 (polyps) | 256×256 |
+| Segmentation | BUSI| 647 (breast tumors) | 256×256 |
+| Segmentation | GlaS| 165 (gland masks) | 512×512 |
+| Segmentation | CVC-ClinicDB| 612 (polyps) | 256×256 |
 
 
 ## Table 2. Performance Comparison of Baseline and Enhanced KA Models
