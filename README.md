@@ -37,3 +37,17 @@
 | ✓ | ✗ | 62.90 | 76.73 | 0.27 | **0.11** |
 | ✗ | ✓ | 63.43 | 77.20 | 0.27 | **0.11** |
 | ✓ | ✓ | **63.97** | **77.59** | 0.27 | **0.11** |
+
+## Training Iterations Analysis
+
+![Baseline models without KA and training iterations after KA addition on three segmentation datasets. From left to right are Glas, Busi, and CVC datasets.](src/iteration.pdf)
+
+**Figure 1.** Baseline models without KA and training iterations after KA addition on three segmentation datasets. From left to right are Glas, Busi, and CVC datasets.
+
+
+## Grad-CAM Heatmap Visualization
+
+![Heatmaps for visualization based on Grad-CAM. The visualized layers are all from the last layer before entering the classification head.](src/heatmap.pdf)
+
+**Figure 2.** Heatmaps for visualization based on Grad-CAM. The visualized layers are all from the last layer before entering the classification head.
+
