@@ -40,14 +40,14 @@
 
 ## Training Iterations Analysis
 
-![Baseline models without KA and training iterations after KA addition on three segmentation datasets. From left to right are Glas, Busi, and CVC datasets.](src/iteration.pdf)
+![Baseline models without KA and training iterations after KA addition on three segmentation datasets. From left to right are Glas, Busi, and CVC datasets.](src/iteration.png)
 
 **Figure 1.** Baseline models without KA and training iterations after KA addition on three segmentation datasets. From left to right are Glas, Busi, and CVC datasets.
 
 
 ## Grad-CAM Heatmap Visualization
 
-![Heatmaps for visualization based on Grad-CAM. The visualized layers are all from the last layer before entering the classification head.](src/heatmap.pdf)
+![Heatmaps for visualization based on Grad-CAM. The visualized layers are all from the last layer before entering the classification head.](src/heatmap.png)
 
 **Figure 2.** Heatmaps for visualization based on Grad-CAM. The visualized layers are all from the last layer before entering the classification head.
 
