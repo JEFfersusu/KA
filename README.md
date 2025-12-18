@@ -1,6 +1,38 @@
 # KA
 **Official PyTorch implementation of "Kolmogorov–Arnold Guided Local–Global Attention for Medical Image Classification"**
 
+# KA: Kolmogorov–Arnold Guided Local–Global Attention
+
+**Official PyTorch implementation of "Kolmogorov–Arnold Guided Local–Global Attention for Medical Image Classification"**
+
+---
+
+## Overview
+
+This repository provides the official implementation of our proposed **KA (Kolmogorov–Arnold Guided Local–Global Attention)** module, a lightweight and plug-and-play attention mechanism designed for medical image analysis. While our paper focuses on **medical image classification**, this repository extends the validation to demonstrate KA's versatility and effectiveness on **medical image segmentation** tasks as well.
+
+---
+
+## What is KA?
+
+KA is a dual-path attention module that balances local structure modeling and global semantic integration through spline-based Kolmogorov–Arnold operators. It consists of two complementary components:
+
+- **KLAM (KAN Local Attention Module)**: Enhances fine-grained local structures through grouped, window-based nonlinear modeling
+- **KAM (KAN Adaptive Mixer)**: Adaptively integrates global context using spline-driven fusion
+
+The module can be seamlessly integrated into CNN, Transformer, and Mamba architectures with minimal computational overhead.
+
+---
+
+## Key Features
+
+- ✅ **Plug-and-Play Design**: Easy integration into diverse backbone architectures
+- ✅ **Lightweight**: Minimal parameter overhead (<0.2M additional parameters)
+- ✅ **Effective**: Consistent improvements across classification and segmentation tasks
+- ✅ **Versatile**: Compatible with CNN, ViT, and State-Space Models (Mamba)
+- ✅ **Efficient**: Linear complexity O(N) for local attention operations
+
+---
 ## Table 1. Summary of Classification and Segmentation Datasets
 
 | Task | Dataset | Image Count | Resolution |
