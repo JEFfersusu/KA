@@ -1,10 +1,6 @@
 # KA
 **Official PyTorch implementation of "Kolmogorov–Arnold Guided Local–Global Attention for Medical Image Classification"**
 
-# KA: Kolmogorov–Arnold Guided Local–Global Attention
-
-**Official PyTorch implementation of "Kolmogorov–Arnold Guided Local–Global Attention for Medical Image Classification"**
-
 ---
 
 ## Overview
