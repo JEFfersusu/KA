@@ -15,7 +15,7 @@
 
 ## Table 2. Performance Comparison of Baseline and Enhanced KA Models
 
-| Model | BUSI IoU (%) ↑ | BUSI F1 (%) ↑ | GlaS IoU (%) ↑ | GlaS F1 (%) ↑ | CVC IoU (%) ↑ | CVC F1 (%) ↑ | Params (M) ↓ | GFLOPs ↓ |
+| Model | BUSI IoU (%) | BUSI F1 (%) | GlaS IoU (%) | GlaS F1 (%) | CVC IoU (%) | CVC F1 (%) | Params (M) | GFLOPs|
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | UNet | 62.20 ± 0.57 | 75.44 ± 0.35 | 87.83 ± 0.19 | 93.37 ± 0.24 | 84.76 ± 0.35 | 91.28 ± 0.32 | 32.79 | 57.23 |
 | **UNet + KA** | **65.20 ± 0.61** | **78.57 ± 0.41** | **89.50 ± 0.19** | **94.48 ± 0.24** | 85.69 ± 0.46 | 92.25 ± 0.51 | 32.94 | 57.29 |
