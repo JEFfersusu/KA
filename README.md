@@ -29,7 +29,12 @@ The module can be seamlessly integrated into CNN, Transformer, and Mamba archite
 - ✅ **Efficient**: Linear complexity O(N) for local attention operations
 
 ---
-## Table 1. Summary of Classification and Segmentation Datasets
+
+## Extended Validation: Segmentation Tasks
+
+In addition to the classification experiments reported in our paper, we further validate KA's effectiveness on **medical image segmentation** tasks across three public datasets.
+
+### Table 1. Summary of Classification and Segmentation Datasets
 
 | Task | Dataset | Image Count | Resolution |
 |---|---|---:|:---:|
@@ -41,7 +46,7 @@ The module can be seamlessly integrated into CNN, Transformer, and Mamba archite
 | Segmentation | CVC-ClinicDB| 612 (polyps) | 256×256 |
 
 
-## Table 2. Performance Comparison of Baseline and Enhanced KA Models
+### Table 2. Performance Comparison of Baseline and KA-Enhanced Models
 
 | Model | BUSI IoU (%) | BUSI F1 (%) | GlaS IoU (%) | GlaS F1 (%) | CVC IoU (%) | CVC F1 (%) | Params (M) | GFLOPs|
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -56,8 +61,11 @@ The module can be seamlessly integrated into CNN, Transformer, and Mamba archite
 | Rolling-UNet | 48.55 ± 0.57 | 64.85 ± 0.20 | 89.02 ± 0.84 | 94.18 ± 0.37 | 86.35 ± 0.28 | 92.21 ± 0.78 | 7.12 | 8.52 |
 | **Rolling-UNet + KA** | 49.43 ± 0.34 | 65.32 ± 0.40 | 88.70 ± 0.45 | 94.20 ± 0.56 | **86.76 ± 0.90** | **92.60 ± 0.39** | 7.16 | 8.79 |
 
+---
 
-## Table 3. Ablation Study of KLAM and KAM on CVC Dataset (UNeXt)
+## Ablation Study
+
+### Table 3. Component Analysis on CVC Dataset (UNeXt Backbone)
 
 | KLAM | KAM | IoU (%) | F1 (%) | Params (M) | GFLOPs |
 |:---:|:---:|---:|---:|---:|---:|
@@ -66,16 +74,20 @@ The module can be seamlessly integrated into CNN, Transformer, and Mamba archite
 | ✗ | ✓ | 63.43 | 77.20 | 0.27 | **0.11** |
 | ✓ | ✓ | **63.97** | **77.59** | 0.27 | **0.11** |
 
-## Training Iterations Analysis
+---
 
-![Baseline models without KA and training iterations after KA addition on three segmentation datasets. From left to right are Glas, Busi, and CVC datasets.](src/iteration.jpg)
+## Visualization
 
-**Figure 1.** Baseline models without KA and training iterations after KA addition on three segmentation datasets. From left to right are Glas, Busi, and CVC datasets.
+### Training Convergence Analysis
 
+![Training iterations comparison](src/iteration.jpg)
 
-## Grad-CAM Heatmap Visualization
+**Figure 1.** Training curves showing baseline models (solid lines) vs. KA-enhanced models (dashed lines) on three segmentation datasets (GlaS, BUSI, CVC). KA-enhanced models demonstrate faster convergence and higher final performance.
 
-![Heatmaps for visualization based on Grad-CAM. The visualized layers are all from the last layer before entering the classification head.](src/heatmap.jpg)
+### Grad-CAM Heatmap Visualization
 
-**Figure 2.** Heatmaps for visualization based on Grad-CAM. The visualized layers are all from the last layer before entering the classification head.
+![Grad-CAM visualization](src/heatmap.jpg)
 
+**Figure 2.** Grad-CAM heatmaps from the last layer before the classification head. KA-enhanced models show more focused and clinically relevant attention on lesion regions compared to baseline models.
+
+---
