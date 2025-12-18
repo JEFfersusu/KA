@@ -23,7 +23,7 @@ The module can be seamlessly integrated into CNN, Transformer, and Mamba archite
 ## Key Features
 
 - ✅ **Plug-and-Play Design**: Easy integration into diverse backbone architectures
-- ✅ **Lightweight**: Minimal parameter overhead (<0.2M additional parameters)
+- ✅ **Lightweight**: Minimal parameter overhead
 - ✅ **Effective**: Consistent improvements across classification and segmentation tasks
 - ✅ **Versatile**: Compatible with CNN, ViT, and State-Space Models (Mamba)
 - ✅ **Efficient**: Linear complexity O(N) for local attention operations
