@@ -1,5 +1,5 @@
 # KA
-**Official PyTorch implementation of "KA: A Lightweight Kolmogorov-Guided Attention Module for Medical Image Analysis"**
+**Official PyTorch implementation of "Kolmogorov–Arnold Guided Local–Global Attention for Medical Image Classification"**
 
 ## Table 1. Summary of Classification and Segmentation Datasets
 
