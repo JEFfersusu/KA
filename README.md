@@ -92,3 +92,20 @@ In addition to the classification experiments reported in our paper, we further 
 **Figure 2.** Grad-CAM heatmaps from the last layer before the classification head. KA-enhanced models show more focused and clinically relevant attention on lesion regions compared to baseline models.
 
 ---
+
+## Citation
+If you think that our work is useful to your research, please cite using this BibTeX😊:
+```bibtex
+@article{Pan2026,
+  author    = {Pan, Weichao},
+  title     = {Kolmogorov–Arnold Guided Local–Global Attention for Medical Image Classification},
+  journal   = {Journal of Imaging Informatics in Medicine},
+  year      = {2026},
+  date      = {2026-06-30},
+  issn      = {2948-2933},
+  doi       = {10.1007/s10278-026-02094-9},
+  url       = {https://doi.org/10.1007/s10278-026-02094-9},
+}
+```
+
+If you have any questions, please contact: panweichao01@outlook.com.
