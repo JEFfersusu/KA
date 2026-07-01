@@ -97,7 +97,7 @@ In addition to the classification experiments reported in our paper, we further 
 If you think that our work is useful to your research, please cite using this BibTeX😊:
 ```bibtex
 @article{Pan2026,
-  author    = {Pan, Weichao},
+  author    = {Weichao Pan, Xu Wang, Chengze Lv, Ruida Liu and Gongrui Wang },
   title     = {Kolmogorov–Arnold Guided Local–Global Attention for Medical Image Classification},
   journal   = {Journal of Imaging Informatics in Medicine},
   year      = {2026},
