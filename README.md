@@ -1,6 +1,8 @@
 # KA
 **Official PyTorch implementation of "Kolmogorov–Arnold Guided Local–Global Attention for Medical Image Classification"**
 
+This study is published by the _Journal of Imaging Informatics in Medicine_: https://link.springer.com/article/10.1007/s10278-026-02094-9.
+
 ---
 
 ## Overview
